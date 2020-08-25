@@ -15,15 +15,15 @@ function App() {
 
   async function handleAddRepository() {
     const response = await api.post('repositories', {
-      title: 'Teste',
-      url: 'https://google.com',
+      title: 'Rebel Code',
+      url: '',
       techs: [],
     });
 
     const repository = response.data;
 
     setRepositories([...repositories, repository]);
-    
+
   }
 
   async function handleRemoveRepository(id) {
@@ -35,21 +35,34 @@ function App() {
   }
 
   return (
-    <div>
-      <ul data-testid="repository-list">
-        {repositories.map(repository => (
-          <li key={repository.id}>
-          {repository.title}
+    <>
+      <header id='main-header'>
+        <h1>Repositórios GitHub</h1>
+      </header>
+      <div className="container">
+        <div id="elements">
+          <h2>Lista de repositórios Github</h2>
 
-          <button onClick={() => handleRemoveRepository(repository.id)}>
-            Remover
-          </button>
-        </li>
-        ))}
-      </ul>
 
-      <button onClick={handleAddRepository}>Adicionar</button>
-    </div>
+          <ul data-testid="repository-list">
+            {repositories.map(repository => (
+              <li key={repository.id}>
+                {repository.title}
+                
+                <button id="goToButton" href="{repository.url}" target="_blanck">Acessar</button>
+
+                <button onClick={() => handleRemoveRepository(repository.id)}>
+                  Remover
+                </button>
+              </li>
+            ))}
+            <button onClick={handleAddRepository}>Adicionar</button>
+          </ul>
+
+        </div>
+      </div>
+
+    </>
   );
 }
 

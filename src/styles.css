@@ -1,16 +1,44 @@
 * {
   margin: 0;
   padding: 0;
+  outline: 0;
   box-sizing: border-box;
 }
 
 body {
   font-size: 14px;
+  background: #f0f0f5;
+}
+.container {
+  width: 100%;
+  max-width: 900px;
+  padding: 0 30px;
+  margin: 32px auto;
+  background-color: #F0F0F5;
 }
 
-div {
+#main-header {
+  height: 60px;
   width: 100%;
-  margin: 20px;
+  background: #24292E;
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;;
+}
+
+#elements {
+  width: 100%;
+  margin: 10px;
+}
+
+h2 {
+  margin: 10px 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 div li {
@@ -31,9 +59,20 @@ button {
   margin-top: 15px;
   font-weight: bold;
   font-size: 14px;
+  transition: 0.2s;
+  border-radius: 4px;
+}
+
+button:hover {
+  opacity: 0.8;
 }
 
 div li button {
   margin: 0 15px;
   background: #ca4949;
+}
+
+#goToButton {
+  margin: 0 15px;
+  background: #2b28ee;
 }
